@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select a Topic</title>
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <h1>Select a Quiz Topic</h1>
+  <div class="topic-container">
+    <button data-topic="1">Computer</button>
+    <button data-topic="2">Music</button>
+    <button data-topic="3">Math</button>
+    <button data-topic="4">Mythology</button>
+    <button data-topic="5">Sports</button>
+  </div>
+
+  <script>
+    // Add click event to each button
+    document.querySelectorAll('button[data-topic]').forEach(button => {
+      button.addEventListener('click', () => {
+        const topicId = button.getAttribute('data-topic');
+        window.location.href = `game.html?topic=${topicId}`;
+      });
+    });
+  </script>
+</body>
+</html>
